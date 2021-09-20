@@ -1,3 +1,3 @@
 # Pokemon-API-Project
 
-By: Ilya Tate
+Ilya Tate
