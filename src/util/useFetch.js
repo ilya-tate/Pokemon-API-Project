@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const API_ENDPOINT = 'https://pokemon.co/api/v2';
+const API_ENDPOINT = 'https://pokeapi.co/api/v2/';
 
 export const useFetch = query => {
   const [loading, setLoading] = useState(true);
