@@ -1,0 +1,21 @@
+$loader-size: 300px;
+
+.Loading {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.load-bar {
+  border: 16px solid #fff;
+  border-top: 16px solid lightblue; /* Blue */
+  border-radius: 50%;
+  width: $loader-size;
+  height: $loader-size;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

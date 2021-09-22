@@ -1,38 +1,19 @@
-// Need to convert to correct api. Does not work pls remember!
-
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useFetch } from '../util/useFetch';
 
 const SingleMovie = () => {
-  const { pokemon } = useParams();
-  const { loading, error, pokemon } = useFetch(`i=${id}&`);
+  const { id } = useParams();
+  const { loading, pokemon } = useFetch(`pokemon/${id}`);
+
+  console.log(pokemon);
 
   if (loading) {
     return <div className="loading"></div>;
   }
-  if (error.show) {
-    return (
-      <div className="page-error">
-        <h1>{error.msg}</h1>
-        <Link to="/" className="btn">
-          Back to Movies
-        </Link>
-      </div>
-    );
-  }
-  const { Poster: poster, Title: title, Plot: plot, Year: year } = movie;
   return (
-    <section className="single-movie">
-      <img src={poster} alt={title} />
-      <div className="single-movie-info">
-        <h2>{title}</h2>
-        <p>{plot}</p>
-        <h4>{year}</h4>
-        <Link to="/" className="btn">
-          Back to Movies
-        </Link>
-      </div>
+    <section className="pokemon">
+      <h1>{ pokemon.name }</h1>
     </section>
   );
 };

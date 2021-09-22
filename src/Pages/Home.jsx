@@ -2,7 +2,7 @@ import React from 'react';
 import { useAppContext } from '../util/context';
 
 const Home = () => {
-  const { query, setQuery, loading, error, pokemon, setPokemon } = useAppContext;
+  const { query, setQuery, loading } = useAppContext;
 
   return (
     <div className="Home">
@@ -13,7 +13,6 @@ const Home = () => {
           value={ query }
           onChange={ e => setQuery(e.target.value) }
         />
-        { error.show && <div className="error">{ error.msg }</div> }
       </form>
     </div>
   );
