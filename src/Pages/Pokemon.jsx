@@ -1,21 +1,32 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useAppContext } from '../util/context';
 import { useFetch } from '../util/useFetch';
 
-const SingleMovie = () => {
+const Pokemon = () => {
   const { id } = useParams();
-  const { loading, pokemon } = useFetch(`pokemon/${id}`);
+  const { pokemon } = useFetch(`pokemon/${id}`);
 
-  console.log(pokemon);
+  console.log(pokemon.types);
 
-  if (loading) {
-    return <div className="loading"></div>;
-  }
   return (
-    <section className="pokemon">
-      <h1>{ pokemon.name }</h1>
-    </section>
+    <div className="Pokemon">
+
+      <ul className="info">
+        <li>
+          <h1>{ pokemon.name }</h1>
+        </li>
+        <li>
+          <p>{ pokemon.weight / 10 } kg { pokemon.height * 10 } cm</p>
+        </li>
+        <li>
+          <p>
+          </p>
+        </li>
+      </ul>
+
+    </div>
   );
 };
 
-export default SingleMovie;
+export default Pokemon;

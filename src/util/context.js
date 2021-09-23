@@ -5,10 +5,11 @@ const AppContext = React.createContext();
 
 export const AppProvider = ({ children }) => {
   const [query, setQuery] = useState('');
-  const { pokemon, setPokemon, error, loading} = useFetch(`pokemon/?limit=1118&offset=0`);
+  const [pokemonName, setPokemonName] = useState('');
+  const {  error, loading, pokemon, setPokemon, pokemonData} = useFetch(`pokemon/${pokemonName}`);
 
   return (
-  <AppContext.Provider value={ { query, setQuery, pokemon, setPokemon, loading, error } }>
+  <AppContext.Provider value={ { query, setQuery, pokemon, setPokemon, pokemonName, setPokemonName, pokemonData, loading, error } }>
     { children }
   </AppContext.Provider>
   );

@@ -1,21 +1,17 @@
 import React from 'react';
-import { useAppContext } from '../util/context';
+import { PokemonList, SearchBar } from '../Components/index';
 
 const Home = () => {
-  const { query, setQuery, loading } = useAppContext;
 
   return (
     <div className="Home">
-      <form onSubmit={ e => e.preventDefault() } className="search-form">
-        <input
-          type="text"
-          className="form-input"
-          value={ query }
-          onChange={ e => setQuery(e.target.value) }
-        />
-      </form>
+
+      <SearchBar />
+
+      <PokemonList />
+
     </div>
   );
 }
 
-export default Home
+export default Home;
