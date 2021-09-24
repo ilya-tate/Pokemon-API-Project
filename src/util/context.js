@@ -6,7 +6,7 @@ const AppContext = React.createContext();
 export const AppProvider = ({ children }) => {
   const [query, setQuery] = useState('');
   const [pokemonName, setPokemonName] = useState('');
-  const { loading, setLoading, pokemon, setPokemon, pokemonData, error } = useFetch(`pokemon/${pokemonName}`);
+  const { loading, setLoading, pokemon, setPokemon, pokemonData, error } = useFetch(`pokemon/${pokemonName}/?offset=0&limit=1118`);
 
   return (
     <AppContext.Provider value={ { loading, setLoading, query, setQuery, pokemon, setPokemon, pokemonName, setPokemonName, pokemonData, error } }>

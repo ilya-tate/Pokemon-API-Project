@@ -1,24 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useAppContext } from '../util/context';
 
 const PokemonList = () => {
-  const { 
-    pokemonData,
-    setPokemonName
-   } = useAppContext();
+  const { query, setQuery, pokemonData, setLoading, setPokemonName } = useAppContext();
 
   return (
     <div className="PokemonList">
 
-      { pokemonData.map(pokemon => {
+      { pokemonData
+        .filter(pokemon => pokemon.name.includes(query.toLowerCase()))
+        .map(pokemon => {
         return (
-          <Link to={ `/pokemon/${pokemon.name}` }>
-            <p className="pokemon" onClick={ () => setPokemonName(pokemon.name) }>{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }</p>
+          <Link to={`/pokemon/${pokemon.name}`} onClick={() => {
+            setPokemonName(pokemon.name)
+            setLoading(true)}}
+          >
+            <p className="pokemon">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</p>
           </Link>
         );
       }) }
-  
+
     </div>
   );
 }

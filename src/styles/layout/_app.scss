@@ -2,6 +2,12 @@
 @use '../util/variables' as *;
 @use '../util/mixins' as *;
 
+body {
+  display: flex;
+  justify-content: center;
+  background-color: $clr-primary-4;
+  color: black;
+}
 
 .container {
   width: 90vw;

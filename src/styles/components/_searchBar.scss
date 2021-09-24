@@ -1,0 +1,10 @@
+@import '../themes/defaultTheme';
+@import '../util/mixins';
+@import '../util/variables';
+
+input {
+  border-radius: $radius;
+  background-color: $clr-secondary-8;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

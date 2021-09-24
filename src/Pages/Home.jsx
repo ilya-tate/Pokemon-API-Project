@@ -1,5 +1,5 @@
 import React from 'react';
-import { PokemonList, SearchBar } from '../Components/index';
+import { SearchBar } from '../Components/index';
 
 const Home = () => {
 
@@ -7,8 +7,6 @@ const Home = () => {
     <div className="Home">
 
       <SearchBar />
-
-      <PokemonList />
 
     </div>
   );
